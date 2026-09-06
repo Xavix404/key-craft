@@ -1,0 +1,192 @@
+:root {
+  --color-fondo-principal: #1e1e2e;
+  --color-fondo-secundario: #2a2a3c;
+  --color-acento-primario: #89dceb;
+  --color-aceto-secundario: #f5c2e7;
+  --color-texto-principal: #cdd6f4;
+  --color-texto-tenue: #a6adc8;
+
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 1rem; /* 16px (Base) */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+  --space-2xl: 3rem; /* 48px */
+  --space-3xl: 4rem; /* 64px */
+
+  --shadow-color: 0deg 0% 0%;
+
+  --shadow-sm: 0 1px 2px rgba(var(--shadow-color), 0.05);
+
+  --shadow-md:
+    0 4px 6px -1px rgba(var(--shadow-color), 0.1),
+    0 2px 4px -1px rgba(var(--shadow-color), 0.06);
+
+  --shadow-lg:
+    0 10px 15px -3px rgba(var(--shadow-color), 0.1),
+    0 4px 6px -2px rgba(var(--shadow-color), 0.05);
+
+  --shadow-xl:
+    0 20px 25px -5px rgba(var(--shadow-color), 0.1),
+    0 10px 10px -5px rgba(var(--shadow-color), 0.04);
+
+  --shadow-inner: inset 0 2px 4px 0 rgba(var(--shadow-color), 0.06);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-sm);
+  gap: var(--space-md);
+  background: var(--color-fondo-secundario);
+  box-shadow: 0 0 15px #0004;
+}
+
+.product-card__image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-fondo-principal);
+}
+
+.product-card__img {
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.product-card__data {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-sm);
+  gap: var(--space-md);
+}
+
+.product-card__title {
+  font-size: 2rem;
+}
+
+.product-card__precio {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-size: 1.5rem;
+}
+
+.product-card__description {
+  word-wrap: pretty;
+}
+
+.product-card__buy-process {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-card__view-details {
+  margin-bottom: var(--space-xl);
+  padding: var(--space-sm);
+  background: var(--color-fondo-secundario);
+  color: var(--color-texto-principal);
+  border: 1px solid var(--color-texto-principal);
+  transition:
+    background 200ms ease-in-out,
+    color 200ms ease-in-out;
+}
+
+.product-card__view-details:hover {
+  cursor: pointer;
+  background: var(--color-texto-principal);
+  color: var(--color-fondo-secundario);
+}
+
+.product-card__buy-process label {
+  font-size: 1.5rem;
+}
+
+.product-card__amount {
+  display: block;
+  background: var(--color-fondo-principal);
+  border: 1px solid var(--color-texto-principal);
+  color: var(--color-texto-principal);
+  padding-left: var(--space-md);
+}
+
+.product-card__buy {
+  cursor: pointer;
+}
+
+.product-card__buy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-sm);
+  gap: var(--space-xs);
+  border: 1px solid var(--color-texto-principal);
+  border-radius: 8px;
+  background: var(--color-texto-principal);
+  color: var(--color-fondo-secundario);
+  height: 3rem;
+}
+
+.product-card__buy:hover {
+  animation: rgb-anim 2s infinite;
+}
+
+@keyframes rgb-anim {
+  0% {
+    box-shadow: 0 0 15px #ffb6c1;
+  }
+  16% {
+    box-shadow: 0 0 15px #ffdab9;
+  }
+  33% {
+    box-shadow: 0 0 15px #ffffe0;
+  }
+  50% {
+    box-shadow: 0 0 15px #98fb98;
+  }
+  66% {
+    box-shadow: 0 0 15px #add8e6;
+  }
+  83% {
+    box-shadow: 0 0 15px #e6e6fa;
+  }
+  100% {
+    box-shadow: 0 0 15px #ffb6c1;
+  }
+}
+
+.product-card__amount:focus-visible,
+.product-card__buy:focus-visible,
+.product-card__category-link:focus-visible,
+.product-card__view-details:focus-visible {
+  outline: 2px solid #89dceb;
+}
+
+.product-card__category-link {
+  color: var(--color-texto-tenue);
+}
+
+@media (min-width: 600px) {
+  .product-card {
+    height: clamp(32rem, 80dvh, 64rem);
+    width: clamp(64rem, 80dvw, 128rem);
+    flex-direction: row;
+    overflow-y: auto;
+  }
+}
