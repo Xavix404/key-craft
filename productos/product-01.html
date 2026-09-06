@@ -28,17 +28,20 @@
           soluta consequatur expedita.
         </p>
         <button class="product-card__view-details" type="button">
-          Ver detalles
+          Ver detalles...
         </button>
         <form class="product-card__buy-process" action="" method="post">
-          <input
-            class="product-card__amount"
-            type="number"
-            name="amount"
-            id="amount"
-            min="1"
-            max="99"
-          />
+          <label for="amount"
+            >Cantidad:
+            <input
+              class="product-card__amount"
+              type="number"
+              name="amount"
+              id="amount"
+              min="1"
+              max="99"
+              value="1"
+          /></label>
           <button class="product-card__buy" type="submit">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +66,7 @@
         </form>
         <span class="product-card__categories"
           >Categorias: <a href="" class="product-card__category-link">Teclado</a
-          ><a href="" class="product-card__category-link"> gamer</a></span
+          ><a href="" class="product-card__category-link"> Gamer</a></span
         >
       </div>
     </div>
