@@ -5,21 +5,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/assets/favicon.png" type="favicon" />
         <title>KeyCraft Studio</title>
+        <link rel="stylesheet" href="/css/styles.css" />
         <link rel="stylesheet" href="/css/index.css" />
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>
     <body>
+
         <!--Aqui procede el header :D-->
 
         <header class="header">
-            <div class="logo-container">
+            <div class="logo-container" id="inicio"">
                 <img src="/assets/favicon.png" />
                 <!--Cambiar al logo-->
             </div>
             <div class="nav-container">
-                <input type="checkbox" id="menu-toggle"/>
-                <label for="menu-toggle" class="material-symbols-outlined iconos"> menu </label>
-                <nav class="nav">
+                <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+                <label class="btn-menu" for="menu-toggle">
+                    <span class="material-symbols-outlined iconos">menu</span>
+                </label>
+                <nav class="nav" id="menu-toggle">
                     <ul class="nav-ul">
                         <li class="items">
                             <div class="item-container">
@@ -43,14 +47,14 @@
                 </nav>
             </div>
             <div class="search-container">
-                <input type="text" placeholder="Buscar..." class="search-input" />
+                <input type="search" placeholder="Buscar..." class="search-input" />
                 <button class="search-button">
-                    <span class="material-symbols-outlined iconos">search</span>
+                    <span class="material-symbols-outlined iconos lupita">search</span>
                 </button>
             </div>
             <div class="car-container">
-                <a href="#" class="car-link">
-                    <span class="material-symbols-outlined iconos">shopping_cart</span>
+                <a href="#carrito" class="car-link">
+                    <span class="material-symbols-outlined iconos carrito">shopping_cart</span>
                 </a>
             </div>
         </header>
