@@ -1,11 +1,12 @@
 body {
     background-color: var(--color-fondo-principal);
-    min-height: 100vh;
+    min-height: 200dvh;
     line-height: 1.5;
     display: grid;
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
         "header"
+        "banner"
         "main"
         "footer";
     user-select: none;
@@ -18,6 +19,15 @@ body {
     align-items: center;
     width: 100%;
     position: fixed;
+    box-shadow: 0px 0px 12px #000a;
+}
+
+.header-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 12px;
 }
 
 .logo-container img {
@@ -142,7 +152,7 @@ body {
 }
 
 .car-container {
-    margin-right: 14px;
+    margin: 0px 14px;
 }
 
 .car-link {
@@ -151,17 +161,53 @@ body {
     font-size: 30px !important;
 }
 
+/*------------------BANNER-----------------------*/
+
+.banner {
+    grid-area: banner;
+    background: linear-gradient(#000a, #000a), url(/assets/banner-fondo.png) no-repeat center center/cover;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-texto-principal);
+    text-align: center;
+}
+
+.banner-container h1 {
+    font-size: 1.8rem;
+    margin: 20px 0 12px 0;
+    text-wrap: balance;
+}
+
+.banner-container p {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+}
+
+.banner-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 8px 16px;
+    background-color: var(--color-acento-primario);
+    text-decoration: none;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
 /*----------MEDIA QUERIES INTENTO ------------*/
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 530px) {
     body {
         display: grid;
         grid-template-areas:
             "header header"
+            "banner banner"
             "aside main"
             "footer footer";
         grid-template-columns: 1fr 4fr;
-        grid-template-rows: auto 1fr auto;
+        grid-template-rows: auto 200px 1fr auto;
     }
 
     .header {
@@ -169,6 +215,16 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-right {
+        display: flex;
+        width: 90%;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        gap: 12px;
     }
 
     .btn-menu {
@@ -208,7 +264,10 @@ body {
         white-space: nowrap;
         overflow: hidden;
         color: var(--color-acento-primario);
-        transition: max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, color 0.3s ease;
+        transition:
+            max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.3s ease,
+            color 0.3s ease;
     }
 
     .items .links,
@@ -238,10 +297,11 @@ body {
         align-items: center;
         width: 60px;
         height: 38px;
-        padding: 0 4px 0 0;
+        padding: 0 8px 0 0;
         position: relative;
         transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         overflow: hidden;
+        margin-right: 20px;
     }
 
     .search-input {
@@ -298,7 +358,7 @@ body {
 
     .carrito {
         background-color: transparent;
-        transition:  all .2s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .carrito:hover {
@@ -306,7 +366,42 @@ body {
         color: var(--color-fondo-principal);
         background-color: var(--color-acento-primario);
         padding: 8px;
-        transition:  padding .2s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         border-radius: 50px;
+    }
+
+    /*-------------------- BANNER ------------------------------*/
+
+    .banner {
+        grid-area: banner;
+        background:
+            linear-gradient(#000a, #000a),
+            url(/assets/banner-fondo.png) no-repeat center center/cover;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--color-texto-principal);
+        text-align: center;
+    }
+
+    .banner-container h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .banner-container p {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .banner-button {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 12px 24px;
+        background-color: var(--color-acento-primario);
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
     }
 }
